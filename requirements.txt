@@ -1,0 +1,5 @@
+pandas
+numpy
+seaborn
+#triggers setup.py file
+-e .
