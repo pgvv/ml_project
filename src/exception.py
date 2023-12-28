@@ -1,5 +1,6 @@
 #Custom Exception Handling
-import sys      #Module manipulates different parts of Python runtime environment
+import sys                          #Module manipulates different parts of Python runtime environment
+from src.logger import logging      #for logging exception file
 
 def error_message_detail(error, error_detail: sys):     #fn for how error message will look like
     _, _, exc_tb= error_detail.exc_info()               #gives all info on which file and which line the exception has occurred
