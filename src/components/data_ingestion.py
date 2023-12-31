@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass                       #creats class variables
 
+from src.components.data_transform import data_transformation
+from src.components.data_transform import data_transformation_config
+
 #Data Ingestion needs inputs(where test data, input data, raw data needed to be saved).
 #All this info is saved in a class
 @dataclass
@@ -49,4 +52,7 @@ class data_ingestion:
 #Testing        
 if __name__== "__main__":
     obj= data_ingestion()
-    obj.initiate_data_ingestion()
+    train_data, test_data= obj.initiate_data_ingestion()
+
+    DataTransformation= data_transformation()
+    DataTransformation.initiate_data_transformation(train_data, test_data)
