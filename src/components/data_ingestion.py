@@ -6,9 +6,12 @@ from src.logger import logging
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass                       #creats class variables
-
+#Data Transformationb Testing
 from src.components.data_transform import data_transformation
 from src.components.data_transform import data_transformation_config
+#Model Trainer Testing
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
 
 #Data Ingestion needs inputs(where test data, input data, raw data needed to be saved).
 #All this info is saved in a class
@@ -55,4 +58,7 @@ if __name__== "__main__":
     train_data, test_data= obj.initiate_data_ingestion()
 
     DataTransformation= data_transformation()
-    DataTransformation.initiate_data_transformation(train_data, test_data)
+    train_array, test_array, _= DataTransformation.initiate_data_transformation(train_data, test_data)
+
+    model_trainer= ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_array, test_array))
