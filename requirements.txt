@@ -6,5 +6,6 @@ scikit-learn
 catboost
 xgboost
 dill
+Flask
 #triggers setup.py file
 -e .
